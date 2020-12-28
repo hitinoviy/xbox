@@ -1,0 +1,128 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'HelveticaNeueCyr';
+    font-weight: 500;
+    font-style: normal;
+}
+header {
+    background: #373a3c;
+    font-size: 16px;
+}
+header .content {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0;
+    align-items: center;
+}
+input[type='search'] {
+    min-height: 38px;
+    min-width: 200px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    outline: none;
+    padding-left: 15px;
+}
+input[type='search']::placeholder {
+    color: #435766;
+}
+
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.menu,
+.drop_menu {
+    list-style-type: none;
+}
+.menu a {
+    color: #fff;
+    text-decoration: none;
+}
+.menu li,
+.menu ul {
+    display: inline-block;
+}
+.menu li {
+    width: 130px;
+    text-align: center;
+    position: relative;
+    margin: 0 10px;
+    transition: all 0.2s;
+}
+ul.drop_menu {
+    position: absolute;
+    display: none;
+    left: -25px;
+    padding-top: 20px;
+}
+.drop_menu li {
+    background: #373a3c;
+    padding: 15px;
+}
+.drop_menu li:hover {
+    background: #4e5255;
+}
+.menu li:hover ul.drop_menu {
+    display: block;
+}
+.menu li:hover .drop_menu li {
+    display: block;
+}
+.user {
+    display: flex;
+}
+.user img {
+    width: 20px;
+    height: 20px;
+    position: relative;
+    right: 20px;
+    bottom: 2px;
+}
+.menu_list {
+    display: flex;
+}
+.menu_list > a {
+    position: relative;
+    display: inline-block;
+    right: 20px;
+}
+.arrow {
+    display: inline-block;
+    position: relative;
+    width: 10px;
+    height: 10px;
+}
+li.menu_list .arrow::after,
+li.menu_list .arrow::before {
+    content: '';
+    width: 10px;
+    height: 1px;
+    display: block;
+    background: #8dd83d;
+    position: absolute;
+    top: 5px;
+    right: -10px;
+    transition: transform 0.3s;
+}
+li.menu_list .arrow::after {
+    transform: rotate(40deg);
+    right: 8px;
+}
+li.menu_list .arrow::before {
+    transform: rotate(-40deg);
+    right: 0px;
+}
+li.menu_list.active .arrow::before,
+li.menu_list.active .arrow::after {
+    background: #74b332;
+}
+li.menu_list.active .arrow::before {
+    transform: rotate(40deg);
+    right: 0px;
+}
+li.menu_list.active .arrow::after {
+    transform: rotate(-40deg);
+    right: 8px;
+}
